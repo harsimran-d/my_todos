@@ -11,6 +11,7 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials: any) {
+        console.log("credentials ", credentials);
         const user = await prisma.user.findFirst({
           where: {
             username: credentials.username,
@@ -51,5 +52,8 @@ export const authOptions = {
 
       return session;
     },
+  },
+  pages: {
+    signIn: "/auth/signin",
   },
 };
