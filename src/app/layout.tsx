@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import Providers from "./providers";
+import AppBar from "@/components/AppBar";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <AppBar></AppBar>
+          {children}
+        </Providers>
       </body>
     </html>
   );
