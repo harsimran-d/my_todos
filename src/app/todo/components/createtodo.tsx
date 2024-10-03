@@ -2,7 +2,7 @@
 
 import { addTodo } from "@/actions/todo/actions";
 import { todosAtom } from "@/atoms/todos";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { useSetRecoilState } from "recoil";
 
@@ -12,10 +12,6 @@ export default function CreateTodo() {
   const session = useSession();
   const _addTodo = async (todo: string) => {
     if (!todo) return;
-    // read the user id from the context and pass it to the addTodo function
-    // if user not found return and show error
-    // redirect to login page
-    console.log(session);
     if (!session.data?.user) {
       console.error("User not found");
       return;
@@ -31,9 +27,6 @@ export default function CreateTodo() {
   };
   return (
     <>
-      <button onClick={() => signOut({ callbackUrl: "localhost:3000" })}>
-        Sign Out
-      </button>
       <input
         placeholder="Add todo"
         onChange={(e) => setTodo(e.target.value)}
