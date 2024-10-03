@@ -2,7 +2,10 @@
 import bcrypt from "bcrypt";
 import prisma from "@/lib/db";
 
-export async function signUp(username: string, password: string) {
+export async function signUp(
+  username: string,
+  password: string,
+): Promise<{ success: boolean; message: string }> {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   try {
@@ -13,9 +16,8 @@ export async function signUp(username: string, password: string) {
       },
     });
 
-    return true;
+    return { success: true, message: "Signup Successful" };
   } catch (error) {
-    console.error("Error creating user:", error);
-    return false;
+    return { success: false, message: "Error Creating Account" };
   }
 }
