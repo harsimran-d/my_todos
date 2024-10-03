@@ -31,7 +31,9 @@ export default function CreateTodo() {
   };
   return (
     <>
-      <button onClick={() => signOut()}>Sign Out</button>
+      <button onClick={() => signOut({ callbackUrl: "localhost:3000" })}>
+        Sign Out
+      </button>
       <input
         placeholder="Add todo"
         onChange={(e) => setTodo(e.target.value)}
