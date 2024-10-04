@@ -43,7 +43,7 @@ export default function SignupPage() {
     const response = await signUp(result.data.username, result.data.password);
 
     if (response.success) {
-      router.push("/auth/signin");
+      router.push("/signin");
     } else {
       setErrorMessage({
         username: "",

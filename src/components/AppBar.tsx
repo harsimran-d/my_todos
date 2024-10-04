@@ -20,7 +20,7 @@ export default function AppBar() {
         </button>
       ) : (
         <button
-          onClick={() => router.push(`/auth/signin?callbackUrl=${callbackUrl}`)}
+          onClick={() => router.push(`/signin?callbackUrl=${callbackUrl}`)}
         >
           Sign In
         </button>
