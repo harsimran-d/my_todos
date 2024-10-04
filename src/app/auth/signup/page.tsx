@@ -53,11 +53,11 @@ export default function SignupPage() {
     }
   };
   return (
-    <div className="m-auto flex w-48 flex-col justify-center space-y-2 align-middle">
-      <h1 className="text-center text-2xl font-bold">Signup</h1>
+    <div className="m-auto flex w-64 flex-col justify-center space-y-2 align-middle">
+      <h1 className="text-center text-2xl font-bold">Sign Up</h1>
 
       <input
-        className="rounded-md border-2 border-black px-2 py-1 text-xl"
+        className="rounded-lg border-2 border-black p-2 text-xl"
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
@@ -69,7 +69,7 @@ export default function SignupPage() {
         ""
       )}
       <input
-        className="rounded-md border-2 border-black px-2 py-1 text-xl"
+        className="rounded-lg border-2 border-black p-2 text-xl"
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
@@ -81,7 +81,7 @@ export default function SignupPage() {
         ""
       )}
       <input
-        className="rounded-md border-2 border-black px-2 py-1 text-xl"
+        className="rounded-lg border-2 border-black p-2 text-xl"
         type="password"
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
@@ -92,8 +92,11 @@ export default function SignupPage() {
       ) : (
         ""
       )}
-      <button onClick={_signup} className="rounded-lg bg-black py-2 text-white">
-        Signup
+      <button
+        onClick={_signup}
+        className="rounded-lg border-2 border-black bg-black p-2 text-xl text-white"
+      >
+        Sign Up
       </button>
     </div>
   );
