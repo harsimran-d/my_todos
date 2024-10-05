@@ -26,13 +26,15 @@ export default function CreateTodo() {
     setTodo("");
   };
   return (
-    <>
+    <div className="flex space-x-2">
       <input
+        className="rounded-lg border-2 border-black p-2"
         placeholder="Add todo"
         onChange={(e) => setTodo(e.target.value)}
         value={todo}
       />
       <button
+        className="rounded-lg bg-blue-500 px-6 text-white disabled:bg-gray-300"
         onClick={() => {
           _addTodo(todo);
           setTodo("");
@@ -40,6 +42,6 @@ export default function CreateTodo() {
       >
         Add
       </button>
-    </>
+    </div>
   );
 }
