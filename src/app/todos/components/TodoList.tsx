@@ -2,13 +2,9 @@
 import { deleteTodo, isCompleted, updateTitle } from "@/actions/todo/actions";
 import { todosAtom } from "@/atoms/todos";
 
-import {
-  TrashIcon,
-  PencilIcon,
-  PencilSquareIcon,
-} from "@heroicons/react/24/solid";
-import { useEffect, useRef, useState } from "react";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { TrashIcon, PencilSquareIcon } from "@heroicons/react/24/solid";
+import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
 
 export default function TodoList({ todos }: { todos: Todo[] }) {
   const [clientTodos, setClientTodos] = useRecoilState(todosAtom);
