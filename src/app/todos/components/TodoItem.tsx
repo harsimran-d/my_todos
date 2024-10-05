@@ -64,8 +64,8 @@ export default function TodoItem({ todo }: { todo: Todo }) {
     }
     return (
       <div className="flex">
-        <button className="pr-2" onClick={_pencilClicked}>
-          <PencilSquareIcon className="h-5 w-5 items-center" />
+        <button className="flex h-min pr-2 align-top" onClick={_pencilClicked}>
+          <PencilSquareIcon className="h-5 w-5" />
         </button>
         {isUpdating ? (
           <input
@@ -89,7 +89,7 @@ export default function TodoItem({ todo }: { todo: Todo }) {
     );
   }
   return (
-    <div className="my-4 flex items-center justify-start space-x-3">
+    <div className="flex items-start space-x-3 py-4 align-top">
       <TodoActioButton />
       <TodoTitle title={todo.title} />
     </div>
