@@ -39,6 +39,7 @@ export default function CreateTodo() {
           _addTodo(todo);
           setTodo("");
         }}
+        disabled={todo.length === 0}
       >
         Add
       </button>
